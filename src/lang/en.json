@@ -1,0 +1,269 @@
+{
+  "text": {
+    "error": "Error",
+    "name": "Name",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "email": "Email",
+    "phone": "Phone",
+    "editButton": "Edit",
+    "deleteButton": "Remove",
+    "viewButton": "View",
+    "newButton": "New",
+    "addButton": "Add",
+    "updateButton": "Update",
+    "backButton": "Back",
+    "detailButton": "Detail",
+    "yesButton": "Yes",
+    "emptyText": "No items",
+    "areYouSure": "Are you sure?",
+    "confirmation": "Confirmation",
+    "price": "Price",
+    "selectAll": "Select all",
+    "all": "All",
+    "new": "New",
+    "edit": "Edit",
+    "general": "General",
+    "addons": "Add-ons",
+    "settings": "Settings",
+    "yes": "Yes",
+    "no": "No",
+    "user": "User",
+    "date": "Date",
+    "details": "Details",
+    "history": "History",
+    "profile": "Profile",
+    "logout": "Log out",
+    "purchaseHistory": "Purchase history",
+    "walletHistory": "Wallet history"
+  },
+  "login": {
+    "title": "Staff Login",
+    "buttonLabel": "Login"
+  },
+  "pageTitle": {
+    "orders": "Orders",
+    "dashboard": "Dashboard",
+    "about": "About app",
+    "categories": "Categories",
+    "addonsCategory": "Add-ons category",
+    "products": "Products",
+    "newProduct": "New product",
+    "editProduct": "Edit product",
+    "customers": "Customers"
+  },
+  "pagination": {
+    "showingResults": "Showing {from} - {to} of {total} results"
+  },
+  "staff": {
+    "emptyText": "No staff",
+    "newStaff": "New staff",
+    "editStaff": "Edit staff",
+    "addStaff": "Add staff",
+    "updateStaff": "Update staff",
+    "type": "Type",
+    "phone": "Phone",
+    "password": "password",
+    "currentPassword": "Current password",
+    "superAdmin": "Super admin",
+    "manager": "Manager",
+    "cashier": "Cashier"
+  },
+
+  "customers": {
+    "emptyText": "No customer",
+    "emptyHistory": "No history",
+    "updateProfileButton": "Update",
+    "editProfile": "Edit profile"
+  },
+  "aboutApp": {
+    "aboutUs": "About us",
+    "contactInformation": "Contact information",
+    "privacyPolicy": "Privacy policy",
+    "termsCondition": "Terms condition",
+    "editAboutUs": "Edit About us",
+    "editContactInformation": "Edit contact information",
+    "editPrivacyPolicy": "Edit privacy policy",
+    "editTermsCondition": "Edit terms condition"
+
+  },
+  "category": {
+    "newCategory": "New category",
+    "editCategory": "Edit category"
+  },
+  "addon": {
+    "newCategory": "New add-on category",
+    "editCategory": "Edit add-on category",
+    "newAddon": "New add-on",
+    "editAddon": "Edit add-on",
+    "canChoose": "Can choose",
+    "typeSingle": "Single",
+    "typeMultiple": "Multiple"
+  },
+  "table": {
+    "th": {
+      "id": "ID",
+      "categoryName": "Category name",
+      "category": "Category",
+      "productName": "Product name",
+      "productQty": "Product qty",
+      "staffName": "Staff name",
+      "email": "Email",
+      "created": "Created",
+      "status": "Status",
+      "type": "Type",
+      "settings": "Settings",
+      "name": "Name",
+      "addons": "Add-ons",
+      "canChoose": "Can choose",
+      "connectedCategories": "Connected categories",
+      "price": "Price",
+      "receivedDate": "Received date",
+      "productQuantity": "Product qty",
+      "total": "Total",
+      "customer": "Customer",
+      "quantity": "Qty",
+      "phoneNumber": "Phone number",
+      "registered": "Registered",
+      "totalOrders": "Total orders",
+      "totalSpent": "Total spent",
+      "date": "Date",
+      "receiptNumber": "Receipt id",
+      "spentAmount": "Spent amount",
+      "duration": "Duration",
+      "amount": "Amount",
+      "pointUsage" : "Point usage",
+      "points" : "Points",
+      "walletBalance" : "Wallet balance"
+    }
+  },
+  "modal": {
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "delete": "Remove this item",
+    "areYouSureYouWantToRemove": "Are you sure you want to remove this item?",
+    "areYouSureYouWantToLogout": "Are you sure you want to log out"
+  },
+  "navigation": {
+    "orders": "Orders",
+    "general": "General",
+    "dashboard": "Dashboard",
+    "aboutApp": "About app",
+    "customers": "Customers",
+    "staffAdmin": "Staff / admin",
+    "menu": "Menu",
+    "categories": "Categories",
+    "addons": "Add-ons",
+    "products": "Products",
+    "reports": "Reports",
+    "salesSummary": "Sales summary",
+    "salesByDay": "Sales by day",
+    "salesByMonth": "Sales by month",
+    "salesByProduct": "Sales by product",
+    "salesByReceipt": "Sales by receipt",
+    "salesByClient": "Sales by client",
+    "settings": "Settings"
+  },
+  "userLevels": {
+    "superAdmin": "Super admin",
+    "manager": "Manager",
+    "cashier": "Cashier"
+  },
+  "label": {
+    "category": "Choose category",
+    "connectedCategories": "Connected categories",
+    "name": "Name",
+    "price": "Price",
+    "photo": "Photo",
+    "priceRegular": "Price /Regular/",
+    "priceLarge": "Price /Large/",
+    "status": "Status",
+    "isThisRecommended": "Is this recommended?",
+    "isThisBestseller": "Is this bestseller?",
+    "isThisNew": "Is this new?",
+    "description": "Description",
+    "allCategory": "All category",
+    "email": "Email",
+    "phone": "Phone",
+    "registered": "Registered",
+    "totalOrders": "Total orders",
+    "totalSpent": "Total spent",
+    "facebook": "Facebook",
+    "messenger": "Messenger",
+    "instagram": "Instagram",
+    "phoneNumber": "Phone number",
+    "privacyPolicy": "Privacy policy",
+    "termsCondition": "Terms condition",
+    "address": "Address",
+    "googleMapLink": "Google map link",
+    "chooseDuration": "Choose duration"
+  },
+  "toast": {
+    "incorrectCredentials": "Incorrect credentials"
+  },
+  "validation": {
+    "passwordType": "Password must be at least 6 characters long, 1 uppercase letter, 1 digit",
+    "nameRequired": "Name required",
+    "aboutUsRequired": "About us required",
+    "atLeastOneCategory": "At least 1 category must be selected",
+    "passwordInvalidFeedback": "Password must be at least 6 characters long, 1 uppercase letter, 1 digit",
+    "privacyPolicy": "Privacy policy required",
+    "termsCondition": "Terms condition is required",
+    "durationRequired": "Duration is required"
+  },
+  "placeholder": {
+    "email": "E-mail",
+    "password": "Password"
+  },
+  "report": {
+    "export": "Export",
+    "table": {
+      "date": "Date",
+      "salesQuantity": "Sales QTY",
+      "grossSales": "Gross sales",
+      "refunds": "Refunds",
+      "netSales": "Net sales",
+      "tax": "Tax",
+      "totalSales": "Total sales",
+      "productName": "Product name",
+      "clientName": "Client name",
+      "receiptNumber": "Receipt number",
+      "paidAt": "Paid at",
+      "pickupDuration": "Pick up Duration",
+      "totalAmount": "Total amount",
+      "saleAmount": "Sale amount",
+      "items": "items",
+      "customerName": "Customer name",
+      "payments": "Payments"
+    }
+  },
+  "order": {
+    "totalSale": "Total sale: <strong>{total}</strong>",
+    "totalTax": "Total tax: <strong>{total}</strong>",
+    "totalPaid": "Total paid: <strong>{total}</strong>"
+  },
+  "settings": {
+    "pickUpDuration": "Pick up duration",
+    "tax": "Tax",
+    "taxVat": "Tax /VAT/",
+    "serviceCharge": "Service charge",
+    "point": "Point",
+    "pointGainPercentage": "Point gain percentage"
+  },
+  "duration": {
+    "newDuration": "New duration",
+    "editDuration": "Edit duration"
+  },
+  "dashboard": {
+    "totalIncome": "Total income",
+    "totalOrders": "Total orders",
+    "totalSoldItems": "Total sold items",
+    "totalCustomer": "Total customer",
+    "averageSalesByWeekdays": "Average sales by weekdays",
+    "averageOrdersByWeekdays": "Average orders by weekdays",
+    "salesByDay": "Sales by day",
+    "bestsellers": "Bestsellers"
+  },
+  "footer": "2021 © Bubble Tea Lab. All rights reserved."
+}

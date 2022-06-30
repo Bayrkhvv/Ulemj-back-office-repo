@@ -3,17 +3,13 @@
     <section class="login-section">
       <b-container>
         <b-row>
-          <b-col
-            cols="12"
-            lg="6"
-            class="d-flex align-items-center justify-content-center"
-          >
+          <b-col cols="12" lg="6" class="d-flex align-items-center justify-content-center">
             <img src="@/assets/logo.png" />
           </b-col>
           <b-col cols="12" lg="6">
             <b-form @submit.prevent="onSubmit" class="login-form">
               <p class="h1">
-                <strong>{{ $t("login.title") }}</strong>
+                <strong>{{ $t('login.title') }}</strong>
               </p>
 
               <InputString
@@ -35,27 +31,25 @@
               />
 
               <InlineButton type="submit" block size="lg" :loading="isLoading">
-                <strong class="text-uppercase">{{
-                  $t("login.buttonLabel")
-                }}</strong>
+                <strong class="text-uppercase">{{ $t('login.buttonLabel') }}</strong>
               </InlineButton>
             </b-form>
           </b-col>
         </b-row>
       </b-container>
     </section>
-    <div class="login-footer">{{ $t("footer") }}</div>
+    <div class="login-footer">{{ $t('footer') }}</div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { validationMixin } from "vuelidate";
-import { email as emailValidator, required } from "vuelidate/lib/validators";
-import InputPassword from "@/components/ui/input/InputPassword";
-import InputString from "@/components/ui/input/InputString";
-import InlineButton from "@/components/ui/button/InlineButton";
-import { AUTH_REQUEST } from "@/store/actions/auth";
+import { mapGetters } from 'vuex';
+import { validationMixin } from 'vuelidate';
+import { email as emailValidator, required } from 'vuelidate/lib/validators';
+import InputPassword from '@/components/ui/input/InputPassword';
+import InputString from '@/components/ui/input/InputString';
+import InlineButton from '@/components/ui/button/InlineButton';
+import { AUTH_REQUEST } from '@/store/actions/auth';
 
 export default {
   mixins: [validationMixin],
@@ -63,8 +57,8 @@ export default {
   data() {
     return {
       form: {
-        email: "",
-        password: "",
+        email: '',
+        password: '',
       },
     };
   },
@@ -82,9 +76,9 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["me", "authStatus"]),
+    ...mapGetters(['me', 'authStatus']),
     isLoading() {
-      return this.authStatus === "loading";
+      return this.authStatus === 'loading';
     },
   },
 
@@ -104,21 +98,21 @@ export default {
       try {
         await this.$store.dispatch(AUTH_REQUEST, this.form);
         if (this.$store.getters.isAuthenticated) {
-          this.$router.push("/manage");
+          this.$router.push('/manage');
         }
       } catch (error) {
         if (error.response.status === 422) {
-          this.form = { email: "", password: "" };
+          this.form = { email: '', password: '' };
           this.$v.$reset();
-          this.$bvToast.toast(this.$t("toast.incorrectCredentials"), {
-            title: this.$t("text.error"),
-            variant: "danger",
+          this.$bvToast.toast(this.$t('toast.incorrectCredentials'), {
+            title: this.$t('text.error'),
+            variant: 'danger',
             solid: true,
           });
         } else {
           this.$bvToast.toast(error.message, {
-            title: this.$t("text.error"),
-            variant: "danger",
+            title: this.$t('text.error'),
+            variant: 'danger',
             solid: true,
           });
         }
@@ -131,8 +125,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../sass/variables";
-@import "../sass/flexBox";
+@import '../sass/variables';
+@import '../sass/flexBox';
 
 .login {
   min-height: 100vh;
