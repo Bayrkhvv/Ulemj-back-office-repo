@@ -1,0 +1,13 @@
+@import './flexBox';
+@import './fontFregat';
+@import './icons';
+@import './variables';
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+// General style overrides and custom classes
+@import './form';
+@import './inputGroup';
+@import './customForms';
+@import './table';

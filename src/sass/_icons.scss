@@ -1,0 +1,84 @@
+$icomoon-font-family: "bubbletea_icons" !default;
+$icomoon-font-path: "/fonts/bubbletea_icons" !default;
+
+$bubbletea-icon-nav-orders: "\e900";
+$bubbletea-icon-nav-products: "\e901";
+$bubbletea-icon-nav-report: "\e902";
+$bubbletea-icon-nav-settings: "\e903";
+$bubbletea-icon-nav-users: "\e904";
+$bubbletea-icon-nav-dashboard: "\e905";
+$bubbletea-icon-nav-categories-path1: "\e906";
+$bubbletea-icon-nav-categories-path2: "\e907";
+$bubbletea-icon-nav-addons: "\e908";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?cu4p6i');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?cu4p6i#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?cu4p6i') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?cu4p6i') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?cu4p6i##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="bubbletea-icon-"], [class*=" bubbletea-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bubbletea-icon-nav-orders {
+  &:before {
+    content: $bubbletea-icon-nav-orders;
+  }
+}
+.bubbletea-icon-nav-products {
+  &:before {
+    content: $bubbletea-icon-nav-products;
+  }
+}
+.bubbletea-icon-nav-report {
+  &:before {
+    content: $bubbletea-icon-nav-report;
+  }
+}
+.bubbletea-icon-nav-settings {
+  &:before {
+    content: $bubbletea-icon-nav-settings;
+  }
+}
+.bubbletea-icon-nav-users {
+  &:before {
+    content: $bubbletea-icon-nav-users;
+  }
+}
+.bubbletea-icon-nav-dashboard {
+  &:before {
+    content: $bubbletea-icon-nav-dashboard;
+  }
+}
+.bubbletea-icon-nav-categories {
+  &:before {
+    content: $bubbletea-icon-nav-categories-path1;
+  }
+  &:after {
+    content: $bubbletea-icon-nav-categories-path2;
+    margin-left: -1em;
+  }
+}
+.bubbletea-icon-nav-addons {
+  &:before {
+    content: $bubbletea-icon-nav-addons;
+  }
+}

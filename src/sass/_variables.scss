@@ -1,0 +1,121 @@
+
+// Base grayscale colors definitions
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// Base colors definitions
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #D70000;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #26AB7B;
+$teal: #20c997;
+$cyan: #17a2b8;
+
+
+// Theme color default definitions
+$primary: #FF6961;
+$primary-gray: #D5AAA2;
+$secondary: $gray-400;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-200;
+$dark: $gray-800;
+
+// This table defines the theme colors (variant names)
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'info': $info,
+  'warning': $warning,
+  'danger': $danger,
+  'light': $light,
+  'dark': $dark
+);
+
+$body-bg: $white;
+$body-color: $black;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+$grid-breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl
+);
+
+$grid-gutter-width: 2rem;
+
+$border-width: 2px;
+$border-color: $gray-400;
+
+$border-radius:               .3rem;
+$border-radius-lg:            .5rem;
+$border-radius-sm:            .2rem;
+
+$font-size-base: 1rem;
+$font-size-lg: $font-size-base * 1.125;
+$font-size-sm: $font-size-base * .75;
+
+$input-btn-padding-y:         .375rem;
+$input-btn-padding-x:         .75rem;
+$input-btn-padding-y-sm:      .125rem;
+$input-btn-padding-x-sm:      .5rem;
+$input-btn-padding-y-lg:      0.75rem;
+$input-btn-padding-x-lg:      1.25rem;
+$input-btn-font-size-lg:      $font-size-lg;
+
+$input-border-color: $border-color;
+
+$input-group-addon-color: $gray-500;
+$input-group-addon-bg: $gray-200;
+$input-group-addon-border-color: $border-color;
+
+$font-family-base: 'Fregat', Helvetica, Arial, sans-serif;
+
+$label-margin-bottom: .25rem;
+
+$badge-font-weight: 400;
+$badge-pill-padding-x: 2em;
+
+$table-border-width: 1px;
+$table-border-color: $gray-200;
+
+$pagination-color: $gray-600;
+$pagination-border-width: 1px;
+$pagination-focus-box-shadow: none;
+$pagination-active-color: $gray-600;
+$pagination-active-bg: $gray-300;
+
+$custom-control-indicator-size: 1.5rem;
+
+$spinner-border-width:  2px !default;
+$spinner-border-width-sm: 2px !default;
+
+$list-group-border-color: $gray-200;
+$list-group-border-width: 1px;
+
+
