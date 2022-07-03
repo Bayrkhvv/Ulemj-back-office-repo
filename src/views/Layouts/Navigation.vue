@@ -10,17 +10,17 @@
           <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Компаниуд</span>
         </router-link>
-      </div>
-      <div class="nav-section">
         <router-link :to="{ name: 'Banners' }" class="nav-link" exact-active-class="is-active">
           <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Banners</span>
         </router-link>
-      </div>
-      <div class="nav-section">
         <router-link :to="{ name: 'Partners' }" class="nav-link" exact-active-class="is-active">
           <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
-          <span>Partners</span>
+          <span>Түнш</span>
+        </router-link>
+        <router-link :to="{ name: 'Services' }" class="nav-link" exact-active-class="is-active">
+          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
+          <span>Үйчилгээ</span>
         </router-link>
       </div>
     </section>

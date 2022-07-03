@@ -7,7 +7,7 @@ export default {
     return Client.get(`${resource}`);
   },
   getSelf() {
-    return Client.get(`${resource}/me`);
+    return Client.get(`/me`);
   },
   register(payload) {
     return Client.post('/register', payload);

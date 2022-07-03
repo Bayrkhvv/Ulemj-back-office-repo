@@ -4,7 +4,7 @@
       sticky-header
       id="my-table"
       :fields="fields"
-      :items="partners"
+      :items="services"
       :busy="isLoading"
       class="custom-table"
       thead-class="custom-table-header"
@@ -15,11 +15,11 @@
       <template #cell(index)="data">
         {{ data.index + 1 }}
       </template>
-      <template #cell(logo)="data">
+      <template #cell(file)="data">
         <div
-          class="logo"
-          v-if="data.item.logo"
-          :style="`background-image: url(${data.item.logo.path ? data.item.logo.path : ''});`"
+          class="file"
+          v-if="data.item.file"
+          :style="`background-image: url(${data.item.file.path ? data.item.file.path : ''});`"
         ></div>
       </template>
       <template #cell(action)="data">
@@ -45,7 +45,7 @@ import InlineButton from '@/components/ui/button/InlineButton';
 
 export default {
   props: {
-    partners: Array,
+    services: Array,
     meta: Object,
     currentPage: Number,
     isLoading: Boolean,
@@ -63,10 +63,13 @@ export default {
           label: 'Нэр',
         },
         {
-          key: 'logo',
-          label: 'Logo',
+          key: 'file',
+          label: 'banner',
         },
-
+        {
+          key: 'description',
+          label: 'Тайлбар',
+        },
         {
           key: 'link',
           label: 'Link',
@@ -87,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.logo {
+.file {
   height: 100px;
   width: 100px;
   background-color: white;

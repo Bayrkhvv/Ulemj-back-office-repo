@@ -1,20 +1,20 @@
 <template>
-  <BaseLayout title="Түнш">
+  <BaseLayout title="Үйчилгээ">
     <template #actions>
       <InlineButton @click="onCreate" pill shadow>
         <span class="text-uppercase">Нэмэх</span>
       </InlineButton>
     </template>
-    <PartnersTable
-      :partners="partnerList"
-      :meta="partnerListMeta"
+    <ServicesTable
+      :services="serviceList"
+      :meta="serviceListMeta"
       :current-page="currentPage"
       :is-loading="isLoading"
       @edit="onEdit"
       @onChangePage="onChangePage"
     />
-    <PartnerAddEditModal
-      :partner="partnerToEdit"
+    <ServiceAddEditModal
+      :service="serviceToEdit"
       @onHidden="emptyingDataToEdit"
       @onRemove="onConfirmDelete"
     />
@@ -28,37 +28,38 @@
     />
   </BaseLayout>
 </template>
+
 <script>
 import { mapGetters } from 'vuex';
-import { PARTNER_LIST_REQUEST, PARTNER_DELETE } from '@/store/actions/partner';
-import PartnersTable from '@/components/manage/partners/PartnersTable';
+import { SERVICE_LIST_REQUEST, SERVICE_DELETE } from '@/store/actions/service';
 import BaseLayout from '@/components/ui/BaseLayout';
 import InlineButton from '@/components/ui/button/InlineButton';
-import PartnerAddEditModal from '@/components/manage/partners/PartnerAddEditModal';
+import ServicesTable from '@/components/manage/services/ServicesTable';
+import ServiceAddEditModal from '@/components/manage/services/ServiceAddEditModal';
 import ConfirmDialog from '@/components/ui/ConfirmDialog';
 
 export default {
   data() {
     return {
       currentPage: 1,
-      partnerIdToEdit: null,
-      partnerIdToRemove: null,
+      serviceIdToEdit: null,
+      serviceIdToRemove: null,
     };
   },
 
   computed: {
     ...mapGetters([
-      'partnerList',
-      'partnerListMeta',
-      'partnerListStatus',
-      'getPartnerById',
-      'partnerStatus',
+      'serviceList',
+      'serviceListMeta',
+      'serviceListStatus',
+      'serviceStatus',
+      'getServiceById',
     ]),
     isLoading() {
-      return this.partnerListStatus == 'loading';
+      return this.serviceListStatus == 'loading';
     },
-    partnerToEdit() {
-      return this.partnerIdToEdit ? this.getPartnerById(this.partnerIdToEdit) : null;
+    serviceToEdit() {
+      return this.serviceIdToEdit ? this.getServiceById(this.serviceIdToEdit) : null;
     },
   },
 
@@ -72,45 +73,46 @@ export default {
         limit: 10,
         page: this.currentPage,
       };
-      await this.$store.dispatch(PARTNER_LIST_REQUEST, payload);
+      await this.$store.dispatch(SERVICE_LIST_REQUEST, payload);
     },
     emptyingDataToEdit() {
-      this.partnerIdToEdit = null;
+      this.serviceIdToEdit = null;
     },
     onCreate() {
       this.emptyingDataToEdit();
       this.openModal();
     },
     onEdit(id) {
-      this.partnerIdToEdit = id;
+      this.serviceIdToEdit = id;
       this.openModal();
     },
     openModal() {
-      this.$bvModal.show('manage-partner-modal');
+      this.$bvModal.show('manage-service-modal');
     },
     onChangePage(page) {
       this.currentPage = page;
       this.fetchData();
     },
-    onConfirmDelete(partnerId) {
-      this.partnerIdToRemove = partnerId;
+    onConfirmDelete(serviceId) {
+      this.serviceIdToRemove = serviceId;
       this.$bvModal.show('delete-confirm-dialog');
     },
     async remove() {
-      await this.$store.dispatch(PARTNER_DELETE, this.partnerIdToRemove);
-      if (this.partnerStatus === 'deleted') {
+      await this.$store.dispatch(SERVICE_DELETE, this.serviceIdToRemove);
+      if (this.serviceStatus === 'deleted') {
         this.emptyingDataToEdit();
-        this.$bvModal.hide('manage-partner-modal');
-        this.partnerIdToRemove = null;
+        this.$bvModal.hide('manage-service-modal');
+        this.serviceIdToRemove = null;
       }
     },
   },
+
   components: {
     BaseLayout,
     InlineButton,
-    PartnersTable,
+    ServicesTable,
+    ServiceAddEditModal,
     ConfirmDialog,
-    PartnerAddEditModal,
   },
 };
 </script>

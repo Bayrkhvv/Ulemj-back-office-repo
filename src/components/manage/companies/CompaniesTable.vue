@@ -4,22 +4,27 @@
       sticky-header
       id="my-table"
       :fields="fields"
-      :items="companyList"
+      :items="companies"
       :busy="isLoading"
       class="custom-table"
       thead-class="custom-table-header"
       tbody-tr-class="custom-table-body"
-      empty-text="Компани олдсонгүй"
+      :emptyText="$t('text.emptyText')"
       show-empty
     >
+      <template #cell(index)="data">
+        {{ data.index + 1 }}
+      </template>
       <template #cell(logo)="data">
         <div
-          class="logo"
+          class="file"
           v-if="data.item.logo"
           :style="`background-image: url(${data.item.logo.path ? data.item.logo.path : ''});`"
         ></div>
       </template>
-
+      <template #cell(isActive)="data">
+        <Status :value="data.item.isActive" />
+      </template>
       <template #cell(action)="data">
         <div class="table-action-buttons">
           <InlineButton
@@ -29,19 +34,22 @@
             @click="$emit('edit', data.item.id)"
             class="has-shadow"
           >
-            {{ $t('text.editButton') }}
+            Засах
           </InlineButton>
         </div>
       </template>
     </b-table>
   </TableBox>
 </template>
+
 <script>
 import TableBox from '@/components/ui/TableBox';
+import Status from '@/components/ui/Status';
 import InlineButton from '@/components/ui/button/InlineButton';
+
 export default {
   props: {
-    companyList: Array,
+    companies: Array,
     meta: Object,
     currentPage: Number,
     isLoading: Boolean,
@@ -50,6 +58,10 @@ export default {
   data() {
     return {
       fields: [
+        {
+          key: 'index',
+          label: '#',
+        },
         {
           key: 'name',
           label: 'Нэр',
@@ -77,12 +89,13 @@ export default {
   components: {
     TableBox,
     InlineButton,
+    Status,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.logo {
+.file {
   height: 100px;
   width: 100px;
   background-color: white;

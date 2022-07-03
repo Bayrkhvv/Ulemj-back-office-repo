@@ -5,6 +5,8 @@ import company from '@/store/modules/company';
 import file from '@/store/modules/file';
 import banner from '@/store/modules/banner';
 import partner from '@/store/modules/partner';
+import service from '@/store/modules/service';
+import user from '@/store/modules/user';
 
 Vue.use(Vuex);
 
@@ -17,6 +19,8 @@ export default new Vuex.Store({
     company,
     banner,
     partner,
+    service,
+    user,
   },
   strict: debug,
 });

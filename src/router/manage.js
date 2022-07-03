@@ -4,6 +4,7 @@ import Index from '@/views/Manage/index';
 import Companies from '@/views/Manage/Companies';
 import Banners from '@/views/Manage/Banners';
 import Partners from '@/views/Manage/Partners';
+import Services from '@/views/Manage/Services';
 
 export default [
   {
@@ -20,7 +21,7 @@ export default [
     },
     children: [
       {
-        path: 'companies',
+        path: '',
         name: 'Companies',
         component: Companies,
       },
@@ -33,6 +34,11 @@ export default [
         path: 'partners',
         name: 'Partners',
         component: Partners,
+      },
+      {
+        path: 'services',
+        name: 'Services',
+        component: Services,
       },
     ],
     beforeEnter: ifAuthenticated,

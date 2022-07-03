@@ -5,20 +5,21 @@
         <span class="text-uppercase">Нэмэх</span>
       </InlineButton>
     </template>
-
     <CompaniesTable
-      :companyList="companyList"
-      :current-page="currentPage"
+      :companies="companyList"
       :meta="companyListMeta"
+      :current-page="currentPage"
       :is-loading="isLoading"
       @edit="onEdit"
       @onChangePage="onChangePage"
     />
+
     <CompanyAddEditModal
       :company="companyToEdit"
-      :onHidden="emptyingDataToEdit"
+      @onHidden="emptyingDataToEdit"
       @onRemove="onConfirmDelete"
     />
+
     <ConfirmDialog
       id="delete-confirm-dialog"
       :message="$t('modal.areYouSureYouWantToRemove')"
@@ -28,7 +29,6 @@
     />
   </BaseLayout>
 </template>
-
 <script>
 import { mapGetters } from 'vuex';
 import { COMPANY_LIST_REQUEST, COMPANY_DELETE } from '@/store/actions/company';
@@ -43,6 +43,7 @@ export default {
     return {
       currentPage: 1,
       companyIdToEdit: null,
+      companyIdToRemove: null,
     };
   },
 
@@ -55,7 +56,7 @@ export default {
       'companyStatus',
     ]),
     isLoading() {
-      return this.companyListStatus === 'loading';
+      return this.companyListStatus == 'loading';
     },
     companyToEdit() {
       return this.companyIdToEdit ? this.getCompanyById(this.companyIdToEdit) : null;
@@ -75,31 +76,24 @@ export default {
       await this.$store.dispatch(COMPANY_LIST_REQUEST, payload);
     },
 
-    onChangePage(page) {
-      this.currentPage = page;
-      this.fetchData();
-    },
-
     emptyingDataToEdit() {
       this.companyIdToEdit = null;
     },
-
     onCreate() {
       this.emptyingDataToEdit();
       this.openModal();
     },
-    onHiddenModal() {
-      this.companyIdToEdit = null;
-    },
-    onEdit(companyId) {
-      this.companyIdToEdit = companyId;
+    onEdit(id) {
+      this.companyIdToEdit = id;
       this.openModal();
     },
-
     openModal() {
       this.$bvModal.show('manage-company-modal');
     },
-
+    onChangePage(page) {
+      this.currentPage = page;
+      this.fetchData();
+    },
     onConfirmDelete(companyId) {
       this.companyIdToRemove = companyId;
       this.$bvModal.show('delete-confirm-dialog');
@@ -117,8 +111,8 @@ export default {
     BaseLayout,
     InlineButton,
     CompaniesTable,
-    CompanyAddEditModal,
     ConfirmDialog,
+    CompanyAddEditModal,
   },
 };
 </script>

@@ -4,38 +4,39 @@
     :title="title"
     :ok-title="saveButtonTitle"
     :loading="isLoading"
-    :delete-disabled="!company"
+    :delete-disabled="!service"
     @hidden="onHidden"
     @ok="onSave"
     @cancel="onCancel"
-    @remove="$emit('onRemove', company.id)"
+    @remove="$emit('onRemove', service.id)"
   >
     <b-form @submit.prevent="onSave">
       <InputString
-        class="company-name"
-        label="Нэр"
+        class="service-name"
+        :label="$t('text.name')"
         size="lg"
         v-model="$v.form.name.$model"
         :vuelidate="$v.form.name"
+        :invalidFeedback="$t('validation.nameRequired')"
       />
       <InputLabel>Link</InputLabel>
       <InputPhoto
         :is-loading="isLoading"
-        :photo="form.logo"
+        :photo="form.file"
         size-type="card"
         class="mb-3"
         @change="onChangePhoto"
         @remove="onDeletePhoto"
       />
       <InputText
-        class="company-description"
+        class="service-description"
         label="Тайлбар"
         size="lg"
         v-model="$v.form.description.$model"
         :vuelidate="$v.form.description"
       />
       <InputString
-        class="company-link"
+        class="service-link"
         label="Link"
         size="lg"
         v-model="$v.form.link.$model"
@@ -48,11 +49,11 @@
 <script>
 import { isNil } from 'lodash';
 import { mapGetters } from 'vuex';
-import { FILE_UPLOAD } from '@/store/actions/file';
-import { COMPANY_CREATE, COMPANY_UPDATE } from '@/store/actions/company';
-import editModalMixin from '@/mixins/editModalMixin';
 import { validationMixin } from 'vuelidate';
 import { required } from 'vuelidate/lib/validators';
+import { SERVICE_CREATE, SERVICE_UPDATE } from '@/store/actions/service';
+import { FILE_UPLOAD } from '@/store/actions/file';
+import editModalMixin from '@/mixins/editModalMixin';
 import ModalMain from '@/components/ui/ModalMain';
 import InputString from '@/components/ui/input/InputString';
 import InputPhoto from '@/components/ui/input/InputPhoto';
@@ -61,8 +62,8 @@ import InputText from '@/components/ui/input/InputText';
 
 const defaultValuesForForm = () => ({
   name: '',
-  logo: null,
-  dedscription: '',
+  file: null,
+  description: '',
   link: '',
 });
 
@@ -70,57 +71,57 @@ export default {
   mixins: [validationMixin, editModalMixin],
 
   props: {
-    company: Object,
+    service: Object,
   },
 
   data() {
     return {
-      modalId: 'manage-company-modal',
+      modalId: 'manage-service-modal',
       form: defaultValuesForForm(),
     };
   },
 
-  validations() {
-    return {
-      form: {
-        name: {
-          required,
-        },
-        description: {
-          required,
-        },
-        link: {
-          required,
-        },
+  validations: {
+    form: {
+      name: {
+        required,
       },
-    };
+      link: {
+        required,
+      },
+      description: {
+        required,
+      },
+    },
   },
+
   watch: {
-    company() {
+    service() {
       this.updateForm();
     },
   },
 
   computed: {
-    ...mapGetters(['companyStatus', 'getFileUpload']),
+    ...mapGetters(['serviceStatus', 'getFileUpload']),
     isLoading() {
-      return this.companyStatus === 'loading';
+      return this.serviceStatus === 'loading';
     },
     title() {
-      return isNil(this.company) ? 'Шинэ байгууллага үүсгэх' : 'Байгууллага засах';
+      return isNil(this.service) ? 'Үйчилгээ нэмэх' : 'Үйчилгээ засах';
     },
     saveButtonTitle() {
-      return isNil(this.company) ? 'нэмэх' : 'засах';
+      return isNil(this.service) ? this.$t('text.addButton') : this.$t('text.updateButton');
     },
   },
+
   methods: {
     updateForm() {
-      this.form = this.company
+      this.form = this.service
         ? {
-            name: this.company.name,
-            description: this.company.description,
-            link: this.company.link,
-            logo: this.company.logo,
+            name: this.service.name,
+            file: this.service.file,
+            link: this.service.link,
+            description: this.service.description,
           }
         : defaultValuesForForm();
       this.$v.$reset();
@@ -141,11 +142,11 @@ export default {
       await this.$store.dispatch(FILE_UPLOAD, file);
 
       if (this.getFileUpload.status === 'success') {
-        this.form.logo = this.getFileUpload.item;
+        this.form.file = this.getFileUpload.item;
       }
     },
     onDeletePhoto() {
-      this.form.logo = null;
+      this.form.file = null;
     },
     async onSave() {
       if (this.$v) {
@@ -154,18 +155,20 @@ export default {
           return;
         }
       }
+
       const data = this.form;
 
-      if (isNil(this.company)) {
-        await this.$store.dispatch(COMPANY_CREATE, data);
+      if (isNil(this.service)) {
+        await this.$store.dispatch(SERVICE_CREATE, data);
       } else {
         const payload = {
-          id: this.company.id,
+          id: this.service.id,
           data,
         };
-        await this.$store.dispatch(COMPANY_UPDATE, payload);
+        console.log(payload);
+        await this.$store.dispatch(SERVICE_UPDATE, payload);
       }
-      if (this.companyStatus === 'success') {
+      if (this.serviceStatus === 'success') {
         this.hideEditModal();
       }
     },

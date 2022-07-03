@@ -2,16 +2,13 @@ import Vue from 'vue';
 import { assign } from 'lodash';
 import {
   USER_REQUEST,
-  USER_REGISTER,
   USER_ERROR,
   USER_SUCCESS,
   USER_PROFILE_UPDATE,
   USER_PROFILE_UPDATE_SUCCESS,
   USER_PROFILE_UPDATE_ERROR,
-  USER_REGISTER_SUCCESS,
-  USER_REGISTER_ERROR,
 } from '@/store/actions/user';
-import { AUTH_LOGOUT, AUTH_REQUEST } from '@/store/actions/auth';
+import { AUTH_LOGOUT } from '@/store/actions/auth';
 import { handleRequestError } from '@/utils/error';
 import Repository, { USERS } from '@/repositories/RepositoryFactory';
 
@@ -38,21 +35,6 @@ const actions = {
       commit(USER_SUCCESS, await UsersRepository.getSelf());
     } catch (error) {
       commit(USER_ERROR);
-      handleRequestError(error);
-    }
-  },
-
-  [USER_REGISTER]: async ({ commit, dispatch }, data) => {
-    commit(USER_REGISTER);
-    try {
-      const response = await UsersRepository.register(data);
-      await dispatch(AUTH_REQUEST, {
-        username: data.email,
-        password: data.password,
-      });
-      return commit(USER_REGISTER_SUCCESS, response.data);
-    } catch (error) {
-      commit(USER_REGISTER_ERROR);
       handleRequestError(error);
     }
   },
@@ -85,20 +67,7 @@ const mutations = {
   [USER_ERROR]: state => {
     state.status = 'error';
   },
-  [USER_REGISTER]: state => {
-    state.status = 'loading';
-    state.isUserRegistrationSuccessful = null;
-  },
-  [USER_REGISTER_SUCCESS]: (state, response) => {
-    const { data: user } = response;
-    state.status = 'success';
-    state.profile = user;
-    state.isUserRegistrationSuccessful = true;
-  },
-  [USER_REGISTER_ERROR]: state => {
-    state.status = 'error';
-    state.isUserRegistrationSuccessful = false;
-  },
+
   [AUTH_LOGOUT]: state => {
     state.profile = {};
   },
