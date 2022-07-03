@@ -1,119 +1,32 @@
 <template>
   <nav :class="['navigation', { 'is-small': isSmall }]">
     <header class="navigation-header">
-      <img src="@/assets/logo.png" />
+      <img src="@/assets/logo.jpeg" />
       <NavigationBurger @click="$emit('click')" :is-active="isSmall" />
     </header>
     <section class="navigation-body">
       <div class="nav-section">
-        <router-link :to="{ name: 'Orders' }" class="nav-link" exact-active-class="is-active">
+        <router-link :to="{ name: 'Companies' }" class="nav-link" exact-active-class="is-active">
           <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
-          <span>{{ $t('navigation.orders') }}</span>
+          <span>Компаниуд</span>
         </router-link>
       </div>
       <div class="nav-section">
-        <p class="nav-section-title">{{ $t('navigation.general') }}</p>
-        <router-link :to="{ name: 'Dashboard' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-dashboard"></span>
-          <span>{{ $t('navigation.dashboard') }}</span>
-        </router-link>
-        <router-link :to="{ name: 'AboutApp' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.aboutApp') }}</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'Customers' }"
-          :class="[
-            'nav-link',
-            {
-              'is-active': $route.name === 'CustomerDetails',
-            },
-          ]"
-          exact-active-class="is-active"
-        >
-          <span class="nav-link-icon bubbletea-icon-nav-users"></span>
-          <span>{{ $t('navigation.customers') }}</span>
-        </router-link>
-        <router-link :to="{ name: 'Staff' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-users"></span>
-          <span>{{ $t('navigation.staffAdmin') }}</span>
-        </router-link>
-      </div>
-
-      <div class="nav-section">
-        <p class="nav-section-title">{{ $t('navigation.menu') }}</p>
-        <router-link :to="{ name: 'Categories' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-categories"></span>
-          <span>{{ $t('navigation.categories') }}</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'Addons' }"
-          :class="['nav-link', { 'is-active': $route.name === 'AddonsByCategory' }]"
-          exact-active-class="is-active"
-        >
-          <span class="nav-link-icon bubbletea-icon-nav-addons"></span>
-          <span>{{ $t('navigation.addons') }}</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'Products' }"
-          :class="[
-            'nav-link',
-            {
-              'is-active': $route.name === 'ProductAdd' || $route.name === 'ProductEdit',
-            },
-          ]"
-          exact-active-class="is-active"
-        >
-          <span class="nav-link-icon bubbletea-icon-nav-products"></span>
-          <span>{{ $t('navigation.products') }}</span>
+        <router-link :to="{ name: 'Banners' }" class="nav-link" exact-active-class="is-active">
+          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
+          <span>Banners</span>
         </router-link>
       </div>
       <div class="nav-section">
-        <p class="nav-section-title">{{ $t('navigation.reports') }}</p>
-        <router-link :to="{ name: 'SalesByDay' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.salesByDay') }}</span>
-        </router-link>
-        <router-link :to="{ name: 'SalesByMonth' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.salesByMonth') }}</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'SalesByProduct' }"
-          class="nav-link"
-          exact-active-class="is-active"
-        >
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.salesByProduct') }}</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'SalesByReceipt' }"
-          class="nav-link"
-          exact-active-class="is-active"
-        >
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.salesByReceipt') }}</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'SalesByClient' }"
-          class="nav-link"
-          exact-active-class="is-active"
-        >
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.salesByClient') }}</span>
-        </router-link>
-      </div>
-      <div class="nav-section">
-        <router-link :to="{ name: 'Settings' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-report"></span>
-          <span>{{ $t('navigation.settings') }}</span>
+        <router-link :to="{ name: 'Partners' }" class="nav-link" exact-active-class="is-active">
+          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
+          <span>Partners</span>
         </router-link>
       </div>
     </section>
     <footer class="navigation-footer">
       <div class="navigation-footer-content">
-        <p><strong>Amy</strong></p>
-        <p>{{ $t('userLevels.superAdmin') }}</p>
+        <p>Admin</p>
       </div>
       <button type="button" @click="onConfirmLogout" class="navigation-footer-caret">
         <!-- <img src="@/assets/icons/ic_caret.svg" /> -->

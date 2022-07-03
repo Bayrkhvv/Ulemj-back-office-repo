@@ -4,7 +4,7 @@
       <b-container>
         <b-row>
           <b-col cols="12" lg="6" class="d-flex align-items-center justify-content-center">
-            <img src="@/assets/logo.png" />
+            <img src="@/assets/logo.jpeg" />
           </b-col>
           <b-col cols="12" lg="6">
             <b-form @submit.prevent="onSubmit" class="login-form">

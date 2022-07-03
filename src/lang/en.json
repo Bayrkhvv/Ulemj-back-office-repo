@@ -39,19 +39,11 @@
     "walletHistory": "Wallet history"
   },
   "login": {
-    "title": "Staff Login",
+    "title": "Login",
     "buttonLabel": "Login"
   },
   "pageTitle": {
-    "orders": "Orders",
-    "dashboard": "Dashboard",
-    "about": "About app",
-    "categories": "Categories",
-    "addonsCategory": "Add-ons category",
-    "products": "Products",
-    "newProduct": "New product",
-    "editProduct": "Edit product",
-    "customers": "Customers"
+    "companies": "Companies"
   },
   "pagination": {
     "showingResults": "Showing {from} - {to} of {total} results"
@@ -146,24 +138,7 @@
     "areYouSureYouWantToLogout": "Are you sure you want to log out"
   },
   "navigation": {
-    "orders": "Orders",
-    "general": "General",
-    "dashboard": "Dashboard",
-    "aboutApp": "About app",
-    "customers": "Customers",
-    "staffAdmin": "Staff / admin",
-    "menu": "Menu",
-    "categories": "Categories",
-    "addons": "Add-ons",
-    "products": "Products",
-    "reports": "Reports",
-    "salesSummary": "Sales summary",
-    "salesByDay": "Sales by day",
-    "salesByMonth": "Sales by month",
-    "salesByProduct": "Sales by product",
-    "salesByReceipt": "Sales by receipt",
-    "salesByClient": "Sales by client",
-    "settings": "Settings"
+    "companies": "Companies"
   },
   "userLevels": {
     "superAdmin": "Super admin",

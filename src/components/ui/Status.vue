@@ -4,7 +4,7 @@
     <b-badge v-else pill variant="secondary" class="status">Inactive</b-badge>
   </div>
   <div v-else>
-    <b-badge pill :variant="getVariant(value)" class="status">{{ value.toLowerCase() }}</b-badge>
+    <b-badge pill :variant="getVariant(value)" class="status">{{ value }}</b-badge>
   </div>
 </template>
 
