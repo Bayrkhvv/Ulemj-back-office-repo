@@ -19,7 +19,7 @@
         :vuelidate="$v.form.name"
         :invalidFeedback="$t('validation.nameRequired')"
       />
-      <InputLabel>Link</InputLabel>
+      <InputLabel>Banner</InputLabel>
       <InputPhoto
         :is-loading="isLoading"
         :photo="form.file"

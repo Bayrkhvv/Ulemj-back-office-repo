@@ -109,7 +109,7 @@ export default {
       this.form = this.partner
         ? {
             name: this.partner.name,
-            file: this.partner.logo,
+            logo: this.partner.logo,
             link: this.partner.link,
           }
         : defaultValuesForForm();
