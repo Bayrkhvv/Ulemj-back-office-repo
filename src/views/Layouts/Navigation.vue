@@ -8,26 +8,21 @@
       <p class="nav-section-title">General</p>
       <div class="nav-section">
         <router-link :to="{ name: 'Companies' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Компаниуд</span>
         </router-link>
         <router-link :to="{ name: 'Banners' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Banners</span>
         </router-link>
         <router-link :to="{ name: 'Partners' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Түнш</span>
         </router-link>
         <router-link :to="{ name: 'Services' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Үйчилгээ</span>
         </router-link>
       </div>
       <p class="nav-section-title">Manage</p>
       <div class="nav-section">
         <router-link :to="{ name: 'Users' }" class="nav-link" exact-active-class="is-active">
-          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Admin</span>
         </router-link>
       </div>
