@@ -9,19 +9,13 @@ export default {
   getSelf() {
     return Client.get(`/me`);
   },
-  register(payload) {
-    return Client.post('/register', payload);
+  create(payload) {
+    return Client.post(`${resource}`, payload);
   },
   update(id, payload) {
     return Client.put(`${resource}/${id}`, payload);
   },
-  sendPasswordResetEmail(payload) {
-    return Client.post(`password/email`, payload);
-  },
-  resetPassword(payload) {
-    return Client.post(`password/reset`, payload);
-  },
-  confirmPhone(id, payload) {
-    return Client.post(`${resource}/${id}/confirm-phone`, payload);
+  delete(id) {
+    return Client.delete(`${resource}/${id}`);
   },
 };

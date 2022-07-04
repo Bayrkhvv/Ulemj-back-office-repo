@@ -5,6 +5,7 @@
       <NavigationBurger @click="$emit('click')" :is-active="isSmall" />
     </header>
     <section class="navigation-body">
+      <p class="nav-section-title">General</p>
       <div class="nav-section">
         <router-link :to="{ name: 'Companies' }" class="nav-link" exact-active-class="is-active">
           <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
@@ -21,6 +22,13 @@
         <router-link :to="{ name: 'Services' }" class="nav-link" exact-active-class="is-active">
           <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
           <span>Үйчилгээ</span>
+        </router-link>
+      </div>
+      <p class="nav-section-title">Manage</p>
+      <div class="nav-section">
+        <router-link :to="{ name: 'Users' }" class="nav-link" exact-active-class="is-active">
+          <span class="nav-link-icon bubbletea-icon-nav-orders"></span>
+          <span>Admin</span>
         </router-link>
       </div>
     </section>

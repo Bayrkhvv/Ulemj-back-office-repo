@@ -5,6 +5,7 @@ import Companies from '@/views/Manage/Companies';
 import Banners from '@/views/Manage/Banners';
 import Partners from '@/views/Manage/Partners';
 import Services from '@/views/Manage/Services';
+import Users from '@/views/Manage/Users';
 
 export default [
   {
@@ -39,6 +40,11 @@ export default [
         path: 'services',
         name: 'Services',
         component: Services,
+      },
+      {
+        path: 'users',
+        name: 'Users',
+        component: Users,
       },
     ],
     beforeEnter: ifAuthenticated,

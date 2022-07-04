@@ -165,7 +165,6 @@ export default {
           id: this.service.id,
           data,
         };
-        console.log(payload);
         await this.$store.dispatch(SERVICE_UPDATE, payload);
       }
       if (this.serviceStatus === 'success') {
