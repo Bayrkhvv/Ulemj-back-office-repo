@@ -13,7 +13,7 @@
     <b-form @submit.prevent="onSave">
       <InputString
         class="banner-name"
-        :label="$t('text.name')"
+        label="Нэр"
         size="lg"
         v-model="$v.form.name.$model"
         :vuelidate="$v.form.name"
@@ -30,14 +30,14 @@
 
       <InputString
         class="banner-link"
-        label="Link"
+        label="Линк"
         size="lg"
         v-model="$v.form.link.$model"
         :vuelidate="$v.form.link"
       />
       <InputRadioButton
         class="banner-status"
-        :label="$t('text.status')"
+        label="Статус"
         size="lg"
         v-model="form.isActive"
         :options="statusOptions"
@@ -134,10 +134,10 @@ export default {
       return this.bannerStatus === 'loading';
     },
     title() {
-      return isNil(this.banner) ? 'Banner үүсгэх' : 'Banner засах';
+      return isNil(this.banner) ? 'Баннер үүсгэх' : 'Баннер засах';
     },
     saveButtonTitle() {
-      return isNil(this.banner) ? this.$t('text.addButton') : this.$t('text.updateButton');
+      return isNil(this.banner) ? 'Нэмэх' : 'Засах';
     },
   },
 

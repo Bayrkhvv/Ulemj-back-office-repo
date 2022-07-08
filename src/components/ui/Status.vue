@@ -1,7 +1,7 @@
 <template>
   <div v-if="typeof value === 'boolean'">
-    <b-badge v-if="value" pill variant="success" class="status">Active</b-badge>
-    <b-badge v-else pill variant="secondary" class="status">Inactive</b-badge>
+    <b-badge v-if="value" pill variant="success" class="status">Идэвхтэй</b-badge>
+    <b-badge v-else pill variant="secondary" class="status">Идэвхгүй</b-badge>
   </div>
   <div v-else>
     <b-badge pill :variant="getVariant(value)" class="status">{{ value }}</b-badge>

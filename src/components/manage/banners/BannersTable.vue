@@ -68,12 +68,12 @@ export default {
         },
         {
           key: 'file',
-          label: 'banner',
+          label: 'Баннер',
         },
 
         {
           key: 'link',
-          label: 'Link',
+          label: 'Линк',
         },
         {
           key: 'startDate',
@@ -85,7 +85,7 @@ export default {
         },
         {
           key: 'isActive',
-          label: this.$t('table.th.status'),
+          label: 'Статус',
         },
         {
           key: 'action',

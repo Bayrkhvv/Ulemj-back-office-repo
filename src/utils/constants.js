@@ -18,8 +18,8 @@ export const STAFF_TYPES = [
 ];
 
 export const STATUS_OPTIONS = [
-  { name: i18n.t('text.active'), value: true },
-  { name: i18n.t('text.inactive'), value: false },
+  { name: 'Идэвхтэй', value: true },
+  { name: 'Идэвхгүй', value: false },
 ];
 
 export const YES_OR_NO_OPTIONS = [

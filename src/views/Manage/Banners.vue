@@ -1,5 +1,5 @@
 <template>
-  <BaseLayout title="Banners">
+  <BaseLayout title="Баннер">
     <template #actions>
       <InlineButton @click="onCreate" pill shadow>
         <span class="text-uppercase">Нэмэх</span>

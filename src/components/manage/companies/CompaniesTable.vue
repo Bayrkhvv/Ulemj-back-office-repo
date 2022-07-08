@@ -76,7 +76,7 @@ export default {
         },
         {
           key: 'link',
-          label: 'Link',
+          label: 'Линк',
         },
         {
           key: 'action',

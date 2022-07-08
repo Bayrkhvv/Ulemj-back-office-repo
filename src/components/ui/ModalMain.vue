@@ -81,7 +81,7 @@ export default {
     },
     cancelTitle: {
       type: String,
-      default: i18n.t('modal.cancel'),
+      default: 'Буцах',
     },
     cancelDisabled: {
       type: Boolean,
@@ -89,7 +89,7 @@ export default {
     },
     deleteTitle: {
       type: String,
-      default: i18n.t('modal.delete'),
+      default: 'Устгах',
     },
     deleteDisabled: {
       type: Boolean,

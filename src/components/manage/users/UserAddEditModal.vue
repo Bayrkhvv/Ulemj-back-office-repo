@@ -13,14 +13,14 @@
     <b-form @submit.prevent="onSave">
       <InputString
         class="name"
-        :label="$t('text.name')"
+        label="Нэр"
         size="lg"
         v-model="$v.form.name.$model"
         :vuelidate="$v.form.name"
       />
       <InputString
         class="user-email"
-        label="Link"
+        label="Линк"
         size="lg"
         v-model="$v.form.email.$model"
         :vuelidate="$v.form.email"
@@ -118,7 +118,7 @@ export default {
       return isNil(this.user) ? 'Хэрэглэгч үүсгэх' : 'Хэрэглэгч засах';
     },
     saveButtonTitle() {
-      return isNil(this.user) ? this.$t('text.addButton') : this.$t('text.updateButton');
+      return isNil(this.user) ? 'Нэмэх' : 'Засах';
     },
   },
 

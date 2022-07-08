@@ -5,13 +5,12 @@
       <NavigationBurger @click="$emit('click')" :is-active="isSmall" />
     </header>
     <section class="navigation-body">
-      <p class="nav-section-title">General</p>
       <div class="nav-section">
         <router-link :to="{ name: 'Companies' }" class="nav-link" exact-active-class="is-active">
           <span>Компаниуд</span>
         </router-link>
         <router-link :to="{ name: 'Banners' }" class="nav-link" exact-active-class="is-active">
-          <span>Banners</span>
+          <span>Баннер</span>
         </router-link>
         <router-link :to="{ name: 'Partners' }" class="nav-link" exact-active-class="is-active">
           <span>Түнш</span>
@@ -20,7 +19,6 @@
           <span>Үйчилгээ</span>
         </router-link>
       </div>
-      <p class="nav-section-title">Manage</p>
       <div class="nav-section">
         <router-link :to="{ name: 'Users' }" class="nav-link" exact-active-class="is-active">
           <span>Admin</span>

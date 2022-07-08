@@ -64,7 +64,7 @@ export default {
         },
         {
           key: 'file',
-          label: 'banner',
+          label: 'Баннер',
         },
         {
           key: 'description',
@@ -72,7 +72,7 @@ export default {
         },
         {
           key: 'link',
-          label: 'Link',
+          label: 'Линк',
         },
         {
           key: 'action',

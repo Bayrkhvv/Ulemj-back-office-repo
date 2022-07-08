@@ -18,7 +18,7 @@
         v-model="$v.form.name.$model"
         :vuelidate="$v.form.name"
       />
-      <InputLabel>Link</InputLabel>
+      <InputLabel>Лого</InputLabel>
       <InputPhoto
         :is-loading="isLoading"
         :photo="form.logo"
@@ -36,7 +36,7 @@
       />
       <InputString
         class="company-link"
-        label="Link"
+        label="Линк"
         size="lg"
         v-model="$v.form.link.$model"
         :vuelidate="$v.form.link"

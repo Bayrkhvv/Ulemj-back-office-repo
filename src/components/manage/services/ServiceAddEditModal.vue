@@ -13,13 +13,13 @@
     <b-form @submit.prevent="onSave">
       <InputString
         class="service-name"
-        :label="$t('text.name')"
+        label="Нэр"
         size="lg"
         v-model="$v.form.name.$model"
         :vuelidate="$v.form.name"
         :invalidFeedback="$t('validation.nameRequired')"
       />
-      <InputLabel>Banner</InputLabel>
+      <InputLabel>Баннер</InputLabel>
       <InputPhoto
         :is-loading="isLoading"
         :photo="form.file"
@@ -37,7 +37,7 @@
       />
       <InputString
         class="service-link"
-        label="Link"
+        label="Линк"
         size="lg"
         v-model="$v.form.link.$model"
         :vuelidate="$v.form.link"

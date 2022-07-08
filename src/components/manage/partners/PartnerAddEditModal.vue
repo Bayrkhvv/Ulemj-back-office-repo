@@ -13,7 +13,7 @@
     <b-form @submit.prevent="onSave">
       <InputString
         class="partner-name"
-        :label="$t('text.name')"
+        label="Нэр"
         size="lg"
         v-model="$v.form.name.$model"
         :vuelidate="$v.form.name"
@@ -30,7 +30,7 @@
 
       <InputString
         class="partner-link"
-        label="Link"
+        label="Линк"
         size="lg"
         v-model="$v.form.link.$model"
         :vuelidate="$v.form.link"
@@ -100,7 +100,7 @@ export default {
       return isNil(this.partner) ? 'Түнш үүсгэх' : 'Түнш засах';
     },
     saveButtonTitle() {
-      return isNil(this.partner) ? this.$t('text.addButton') : this.$t('text.updateButton');
+      return isNil(this.partner) ? 'Нэмэх' : 'Засах';
     },
   },
 

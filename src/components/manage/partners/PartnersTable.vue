@@ -64,12 +64,12 @@ export default {
         },
         {
           key: 'logo',
-          label: 'Logo',
+          label: 'Лого',
         },
 
         {
           key: 'link',
-          label: 'Link',
+          label: 'Линк',
         },
         {
           key: 'action',
