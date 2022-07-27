@@ -1,5 +1,5 @@
 # ulemj-back-office-repo
-admin.ulemjgrease.com
+https://admin.ulemjgrease.com
 ## Project setup
 ```
 npm install
